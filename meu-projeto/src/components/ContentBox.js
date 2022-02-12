@@ -1,6 +1,17 @@
 function ContentBox(){
     return (
-        <div>ContentBox</div>
+        <>
+            <div>titulo</div>
+            <div>descrição</div>
+            <div>
+                <div>
+                    editar
+                </div>
+                <div>
+                    excluir
+                </div>
+            </div>
+        </>
     )
 }
 export default ContentBox

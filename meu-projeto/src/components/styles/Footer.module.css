@@ -1,0 +1,18 @@
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #090909;
+
+}
+.footer>li{
+    margin-left: 30px;
+    list-style: none;
+    padding: 10px;
+}
+.footer>li>svg{
+    font-size: 40px;
+    cursor: pointer;
+    color: #FAE1DF;
+
+}
