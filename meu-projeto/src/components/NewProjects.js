@@ -1,8 +1,8 @@
-function body(){
+function  NewProjects(){
     return (
         <ul>
             
         </ul>
     )
 }
-export default body
+export default NewProjects
