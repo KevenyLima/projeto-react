@@ -5,6 +5,7 @@
     justify-content: center;
     font-size: 20px;
 }
+
 p{
     margin:20px;
     
@@ -14,21 +15,7 @@ span{
     padding: 5px;
     color: #FFBB33;
 }
-.buttom{
-    display: flex;
-    justify-content: center;
-    background-color: #090909;
-    padding: 10px;
-    margin:1px;
-    color: white;
-    cursor: pointer;
-    user-select:none;
-}
-.buttom:hover{
-    
-    background-color: #2F2E41;
-}
-.buttom:active{
-    background-color: #FFBB33;
-    color:black;
+
+.img{
+    block-size: 20em;
 }

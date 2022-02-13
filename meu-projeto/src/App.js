@@ -6,13 +6,16 @@ import Home from "./pages/Home"
 import Contato from "./pages/Contato"
 import Empresa from "./pages/Empresa"
 import Projetos from "./pages/Projetos"
+import NewProjects from "./components/NewProjects";
+import Container from "./components/Container";
 
 function App() {
   return (
     <Router>
         <Header/>
           <Switch>
-            <Route exact path="/">
+            <Container customClass="column" >
+              <Route exact path="/">
               <Home/>
             </Route>
             <Route path="/empresa">
@@ -24,6 +27,10 @@ function App() {
             <Route path="/projetos">
               <Projetos/>
             </Route>
+            <Route path="/newprojects">
+              <NewProjects/>
+            </Route>
+            </Container>
           </Switch>
         <Footer/>
     </Router>
