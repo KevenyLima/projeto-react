@@ -1,21 +1,31 @@
+import { useState , useEffect } from "react"
 function Projetos(){
-    async function getContent(){
-        try{
-             const response = await fetch('http://localhost:5000/categories')
-             const data = await response.json()
-             console.log(data)
-            }
-        catch(error){
-            console.log(error)
-        }
-    }
+    const  [projects,setProjects] =  useState([])
 
-    getContent()
+     useEffect(async ()=>
+     {
+          try
+          {
+             const response = await fetch('http://localhost:5000/projects')
+             const datas = await response.json()
+             setProjects(datas)
+             
+         }
+         catch(error){
+             console.log(error)        
+         }
+     }   
+,[])
     return (
         <>
-        <h1>Projetos</h1>
-        <div>conteudo Projetos</div>
+            <div>
+                {projects.map((project)=>(
+                    <div>{project.projeto}</div>
+                ))}
+            </div>
+           
         </>
+        
     )
 }
 export default Projetos

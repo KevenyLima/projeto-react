@@ -1,7 +1,7 @@
 import Footer from "./components/Footer";
-import Header from "./components/Header";
+import Navbar from "./components/Navbar";
 import ContentBox from "./components/ContentBox"
-import {BrowserRouter as Router, Switch ,Route,Link} from "react-router-dom"
+import {BrowserRouter as Router, Switch ,Route} from "react-router-dom"
 import Home from "./pages/Home"
 import Contato from "./pages/Contato"
 import Empresa from "./pages/Empresa"
@@ -12,9 +12,9 @@ import Container from "./components/Container";
 function App() {
   return (
     <Router>
-        <Header/>
+        <Navbar/>
           <Switch>
-            <Container customClass="column" >
+            <Container customClass="min_height" >
               <Route exact path="/">
               <Home/>
             </Route>

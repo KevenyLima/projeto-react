@@ -1,16 +1,17 @@
-.content{
+.container{
+    width: 1200px;
     display: flex;
-    max-width: 1200px;
-    min-height: 75vh;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
     flex-wrap: wrap;
-    margin:0 auto;
 }
-
+.min_height{
+    min-height: 75vh;
+}
 .start{
-    flex-direction: start;
+    justify-content: flex-start;
 }
 .column{
     flex-direction: column;
+    justify-content: flex-start;
 }
