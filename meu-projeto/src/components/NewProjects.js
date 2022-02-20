@@ -10,8 +10,10 @@ function  NewProjects(){
             method: 'post',
             headers:{'Content-type':'application/json'},
             body: JSON.stringify(project)
-        }).then(resp=>resp.json())
-        .then(data=>console.log(data))
+        }).then(resp=>resp.json()).then((data)=>{
+            history.push('/projects',{message:'projeto criado com sucesso'})
+        })
+        .catch(error=>console.log(error))
     }
     return (
         <div className={styles.newProjects_container}>
