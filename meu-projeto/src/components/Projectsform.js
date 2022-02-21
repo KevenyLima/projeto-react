@@ -10,7 +10,6 @@ function ProjectsForm({btnText,handleSubmit,projectData}){
             const response = await fetch("http://localhost:5000/categories")
             const data = await response.json()
             setCategories(data)
-            console.log(categories)
         } catch (error) {
             console.log(error)
         }

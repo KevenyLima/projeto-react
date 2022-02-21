@@ -1,6 +1,14 @@
 import { useState , useEffect } from "react"
+import { useLocation } from "react-router-dom"
+import Message from "../components/Message"
 function Projetos(){
     const  [projects,setProjects] =  useState([])
+    const location = useLocation()
+    let messages =''
+    if(location.state){
+        messages = location.state.message
+        console.log(messages)
+    }
 
      useEffect(async ()=>
      {
@@ -17,14 +25,12 @@ function Projetos(){
      }   
 ,[])
     return (
-        <>
-            <div>
-                {projects.map((project)=>(
-                    <div>{project.projeto}</div>
-                ))}
-            </div>
-           
-        </>
+        <div>
+            <h1>Meus projetos</h1>
+            {messages && <Message type="success" msg={messages}/>}
+        </div>
+            
+            
         
     )
 }
