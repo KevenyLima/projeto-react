@@ -1,6 +1,5 @@
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import ContentBox from "./components/ContentBox"
 import {BrowserRouter as Router, Switch ,Route} from "react-router-dom"
 import Home from "./pages/Home"
 import Contato from "./pages/Contato"

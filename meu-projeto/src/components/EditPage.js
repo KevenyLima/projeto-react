@@ -2,11 +2,15 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import Container from "./Container"
 import Loading from "./Loading"
+import ProjectsForm from "./Projectsform"
 import styles from "./styles/project.module.css"
+import Message from "./Message"
 function EditPage(){
     let {id} = useParams()
     const [project,setProject] = useState([])
     const [showProjectForm,setShowProjectForm]= useState(false)
+    const [message,setMessage]= useState('')
+    const [type,setType]= useState('')
     useEffect(() => {
         setTimeout(
           () =>
@@ -24,12 +28,34 @@ function EditPage(){
       function toggleProjectForm(){
           setShowProjectForm(!showProjectForm)
       }
+      function editPost(project){
+        if(project.budget<project.cost){
+            setMessage("O orcamento não pode ser menor que custo do projeto!")
+            setType("error")
+            return false
+        }
+        
+          fetch(`http://localhost:5000/projects/${project.id}`,{
+              method:"patch",
+              headers:{
+                  "Content-Type":"application/json"
+              },
+              body:JSON.stringify(project)
+          }).then((response)=>response.json())
+          .then((data)=>{
+              setProject(data)
+              setShowProjectForm(false)
+                setMessage("projeto atualizado com sucesso")
+                setType('success')
+          }).catch((error)=>console.log(error))
+      }
 
     return (
         <>
             {project.name?(
                 <div className={styles.project_details}>
                     <Container customClass="column">
+                        {message&&<Message type={type} msg={message}/>}
                         <div className={styles.details_container}>
                             <h1>Projeto: {project.name}</h1>
                             <button className={styles.btn} onClick={toggleProjectForm}>{!showProjectForm?"Editar Projeto":"Fechar"}</button>
@@ -47,7 +73,7 @@ function EditPage(){
                                 </div>
                             ):(
                                 <div className={styles.project_info}>
-                                    <p>form</p>
+                                    <ProjectsForm btnText="Salvar" projectData={project} handleSubmit={editPost}/>
                                 </div>
                             )}
                         </div>
