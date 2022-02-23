@@ -8,6 +8,7 @@ import Empresa from "./pages/Empresa"
 import Projetos from "./pages/Projetos"
 import NewProjects from "./components/NewProjects";
 import Container from "./components/Container";
+import EditPage from "./components/EditPage"
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
             </Route>
             <Route path="/newprojects">
               <NewProjects/>
+            </Route>
+            <Route path="/project/:id" >
+                <EditPage/>
             </Route>
             </Container>
           </Switch>
