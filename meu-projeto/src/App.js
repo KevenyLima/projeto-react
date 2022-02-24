@@ -30,7 +30,7 @@ function App() {
             <Route path="/newprojects">
               <NewProjects/>
             </Route>
-            <Route path="/project/:id" >
+            <Route path="/projects/:id" >
                 <EditPage/>
             </Route>
             </Container>
