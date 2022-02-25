@@ -21,7 +21,7 @@ function Projetos(){
      useEffect(()=>
      {
          setTimeout(() => {
-            fetch('http://localhost:5000/projects',{
+            fetch('http://localhost:5000/project',{
                 method:'get',
                 headers:{
                     'Content-Type':'application/json'
@@ -35,7 +35,7 @@ function Projetos(){
 ,[])
 
 function RemoveProject(id){
-    fetch(`http://localhost:5000/projects/${id}`,{
+    fetch(`http://localhost:5000/project/${id}`,{
         method:"delete",
         headers:{
             "Content-Type":"application/json"
@@ -62,7 +62,7 @@ function RemoveProject(id){
                     id={project.id} 
                     name={project.name}
                     budget={project.budget}
-                    category={project.category.name}
+                    category={""}
                     key={project.id}
                     handleRemove={RemoveProject}
                     />

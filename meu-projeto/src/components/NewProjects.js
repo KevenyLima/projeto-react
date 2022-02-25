@@ -6,7 +6,7 @@ function  NewProjects(){
     function createPost(project){
         project.cost = 0
         project.servies=[]
-        fetch("http://localhost:5000/projects",{
+        fetch("http://localhost:5000/project",{
             method: 'post',
             headers:{'Content-type':'application/json'},
             body: JSON.stringify(project)

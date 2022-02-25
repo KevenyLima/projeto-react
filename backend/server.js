@@ -3,6 +3,7 @@ const app = express()
 const cors = require("cors")
 const mongoose= require("mongoose")
 const projectRoutes = require("./routes/RouterProject")
+const categoryRoutes = require('./routes/RouterCategories')
 require('dotenv').config()
 app.use(cors())
 //configurando para express interpretar json
@@ -14,7 +15,7 @@ const SENHA =encodeURIComponent(process.env.DB_PASSWORD)
 
 //configuando para que todas as rotas project sejam direcionas para o arquivo projectRoutes
 app.use('/project',projectRoutes)
-
+app.use('/category',categoryRoutes)
 mongoose.connect(`mongodb+srv://${USER}:${SENHA}@cluster0.qnwtx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`)
 .then(()=>{
     console.log('conectado ao mongodb')

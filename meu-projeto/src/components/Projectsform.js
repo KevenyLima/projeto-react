@@ -7,9 +7,16 @@ function ProjectsForm({btnText,handleSubmit,projectData}){
     const [project,setProject]=useState(projectData||{})
     useEffect(async()=>{
         try {
-            const response = await fetch("http://localhost:5000/categories")
+            const response = await fetch("http://localhost:5000/category",{
+                method:"get",
+                headers:{
+                    "Content-Type":"application/json"
+                }
+            })
             const data = await response.json()
             setCategories(data)
+            console.log(categories)
+            console.log(data)
         } catch (error) {
             console.log(error)
         }
