@@ -5,12 +5,7 @@ const mongoose= require("mongoose")
 const projectRoutes = require("./routes/RouterProject")
 const categoryRoutes = require('./routes/RouterCategories')
 require('dotenv').config()
-/*app.use((req,res,next)=>{
-    res.header('Access-Control-Allow-Origin','*')
-    res.header('Access-Control-Allow-Methods','get,post,delete,put,patch')
-    app.use(cors())
-    next()
-})*/
+
 app.use(cors())
 
 app.use(express.urlencoded({extended:true}))

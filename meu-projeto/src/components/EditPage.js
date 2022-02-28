@@ -37,7 +37,7 @@ function EditPage(){
         }
         
           fetch(`http://localhost:5000/project/${project._id}`,{
-              method:"patch",
+              method:"put",
               headers:{
                   "Content-Type":"application/json"
               },

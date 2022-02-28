@@ -50,7 +50,7 @@ router.get("/:id",async(req,res)=>{
     }
 
 }) 
-router.patch('/:id', async(req,res)=>{
+router.put('/:id', async(req,res)=>{
     const id = req.params.id
     const {name,budget,category,cost,services} =req.body
     const project ={
