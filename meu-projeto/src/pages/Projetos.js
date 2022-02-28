@@ -43,7 +43,7 @@ function RemoveProject(id){
     })
     .then((response)=>response.json())
     .then((data)=>{
-        setProjects(projects.filter((project)=>project.id !== id))
+        setProjects(projects.filter((project)=>project._id !== id))
         setProjectMessage('Projeto removido com sucesso!')
     })
     .catch((error)=>console.log(error))
@@ -59,11 +59,11 @@ function RemoveProject(id){
             <Container customClass="start">
                 {projects.length > 0 &&projects.map((project)=>(
                     <ProjectCard 
-                    id={project.id} 
+                    id={project._id} 
                     name={project.name}
                     budget={project.budget}
-                    category={""}
-                    key={project.id}
+                    category={project.category.name}
+                    key={project._id}
                     handleRemove={RemoveProject}
                     />
                 ))}

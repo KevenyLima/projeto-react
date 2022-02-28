@@ -3,8 +3,8 @@ const router =require("express").Router()
 const Project = require('../models/project')
 //create
 router.post('/',async(req,res)=>{
-    const {name,budget,category,cost,services,id}=req.body
-    if(!name&&!budget&&!category&&!cost&&!services&&!id){
+    const {name,budget,category,cost,services}=req.body
+    if(!name&&!budget&&!category&&!cost&&!services){
         res.status(422).json({error:"preencha todos os campos"})
         return
     }
@@ -15,7 +15,6 @@ router.post('/',async(req,res)=>{
         category,
         cost,
         services,
-        id
     }
 
     try {
@@ -37,7 +36,7 @@ router.get('/',async(req,res)=>{
 })
 router.get("/:id",async(req,res)=>{
     const id = req.params.id
-
+    
     try {
         
         const project = await Project.findOne({_id:id})
@@ -53,9 +52,9 @@ router.get("/:id",async(req,res)=>{
 }) 
 router.patch('/:id', async(req,res)=>{
     const id = req.params.id
-    const {name,budget,category,cost,services,project_id} =req.body
+    const {name,budget,category,cost,services} =req.body
     const project ={
-        name,budget,category,cost,services,project_id
+        name,budget,category,cost,services
     }
     try {
         const updateProject =await Project.updateOne({_id:id},project)

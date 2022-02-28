@@ -11,10 +11,11 @@ function EditPage(){
     const [showProjectForm,setShowProjectForm]= useState(false)
     const [message,setMessage]= useState('')
     const [type,setType]= useState('')
+    console.log(id)
     useEffect(() => {
         setTimeout(
           () =>
-            fetch(`http://localhost:5000/projects/${id}`, {
+            fetch(`http://localhost:5000/project/${id}`, {
               method: 'GET',
               headers: {
                 'Content-Type': 'application/json'
@@ -35,7 +36,7 @@ function EditPage(){
             return false
         }
         
-          fetch(`http://localhost:5000/projects/${project.id}`,{
+          fetch(`http://localhost:5000/project/${project._id}`,{
               method:"patch",
               headers:{
                   "Content-Type":"application/json"

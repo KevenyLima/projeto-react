@@ -4,13 +4,12 @@ const Project=mongoose.model('project',{
     budget:Number,
     category:
         {
-            id:Number,
-            nome:String  
+            id:String,
+            name:String  
         }
     ,
     cost: Number,
-    services: Array,
-    id:Number 
+    services: Array
 })
 
 module.exports = Project

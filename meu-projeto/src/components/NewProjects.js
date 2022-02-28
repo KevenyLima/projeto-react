@@ -10,7 +10,7 @@ function  NewProjects(){
             method: 'post',
             headers:{'Content-type':'application/json'},
             body: JSON.stringify(project)
-        }).then(resp=>resp.json()).then((data)=>{
+        }).then(resp=>resp.json()).then(()=>{
             history.push('/projetos',{message:'projeto criado com sucesso'})
         })
         .catch(error=>console.log(error))
