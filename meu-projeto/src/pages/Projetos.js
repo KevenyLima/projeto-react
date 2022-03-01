@@ -15,22 +15,19 @@ function Projetos(){
     let messages =''
     if(location.state){
         messages = location.state.message
-        console.log(messages)
     }
 
      useEffect(()=>
      {
-         setTimeout(() => {
-            fetch('http://localhost:5000/project',{
-                method:'get',
-                headers:{
-                    'Content-Type':'application/json'
-                }
-            }).then((response)=>response.json()).then((data)=>{
-                setProjects(data)
-                setRemoveLoading(true)
-            }).catch((error)=>console.log(error))
-         }, 300)
+        fetch('http://localhost:5000/project',{
+            method:'get',
+            headers:{
+                'Content-Type':'application/json'
+            }
+        }).then((response)=>response.json()).then((data)=>{
+            setProjects(data)
+            setRemoveLoading(true)
+        }).catch((error)=>console.log(error))
      }   
 ,[])
 
@@ -69,7 +66,7 @@ function RemoveProject(id){
                 ))}
                 {!removeLoading&&<Loading/>}
                 {removeLoading && projects.length===0&&(
-                    <p>Não há prjetos cadastrados!</p>
+                    <p>Não há projetos cadastrados!</p>
                 )}
               
             </Container >

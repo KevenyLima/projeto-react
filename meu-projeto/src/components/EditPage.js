@@ -11,10 +11,7 @@ function EditPage(){
     const [showProjectForm,setShowProjectForm]= useState(false)
     const [message,setMessage]= useState('')
     const [type,setType]= useState('')
-    console.log(id)
     useEffect(() => {
-        setTimeout(
-          () =>
             fetch(`http://localhost:5000/project/${id}`, {
               method: 'GET',
               headers: {
@@ -24,12 +21,13 @@ function EditPage(){
               .then((resp) => resp.json())
               .then((data) => {
                 setProject(data)
-              }),200)
+              })
       }, [id])
       function toggleProjectForm(){
           setShowProjectForm(!showProjectForm)
       }
       function editPost(project){
+          setMessage('')
         if(project.budget<project.cost){
             setMessage("O orcamento não pode ser menor que custo do projeto!")
             setType("error")

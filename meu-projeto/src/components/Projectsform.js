@@ -15,7 +15,6 @@ function ProjectsForm({btnText,handleSubmit,projectData}){
             })
             const data = await response.json()
             setCategories(data)
-            console.log(categories)
         } catch (error) {
             console.log(error)
         }
@@ -24,7 +23,6 @@ function ProjectsForm({btnText,handleSubmit,projectData}){
     const submit=(e)=>{
         e.preventDefault()
         handleSubmit(project)
-        console.log(project)
     }
     function handleChange(e){
         setProject({...project,[e.target.name]:e.target.value})
