@@ -7,7 +7,7 @@ function Home(){
             <h1>Bem-vindo ao <span>Costs</span></h1>
             <p>Comece a gerenciar os seus projetos agora mesmo!</p>
             <Button to="/newprojects" text="Criar Projeto"/>
-            <div><img className={style.img} src={cost}/></div>
+            <div><img className={style.img} src={cost} alt='Coin'/></div>
         </div>
     )
 }

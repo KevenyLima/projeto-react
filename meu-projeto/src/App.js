@@ -1,6 +1,6 @@
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import {BrowserRouter as Router, Switch ,Route} from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Home from "./pages/Home"
 import Contato from "./pages/Contato"
 import Empresa from "./pages/Empresa"
@@ -12,32 +12,20 @@ import EditPage from "./components/EditPage"
 function App() {
   return (
     <Router>
-        <Navbar/>
-          <Switch>
-            <Container customClass="min_height" >
-              <Route exact path="/">
-              <Home/>
-            </Route>
-            <Route path="/empresa">
-              <Empresa/>
-            </Route>
-            <Route path="/contato">
-              <Contato/>
-            </Route>
-            <Route path="/projetos">
-              <Projetos/>
-            </Route>
-            <Route path="/newprojects">
-              <NewProjects/>
-            </Route>
-            <Route path="/projects/:id" >
-                <EditPage/>
-            </Route>
-            </Container>
-          </Switch>
-        <Footer/>
+      <Navbar />
+      <Container customClass="min_height" >
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/empresa" element={<Empresa />} />
+          <Route path="/contato" element={<Contato />} />
+          <Route path="/projetos" element={<Projetos />} />
+          <Route path="/newprojects" element={<NewProjects />} />
+          <Route path="/projects/:id" element={<EditPage />} />
+        </Routes>
+      </Container>
+      <Footer />
     </Router>
-    
+
   );
 }
 
