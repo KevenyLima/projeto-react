@@ -1,9 +1,13 @@
-*{
-  padding: 0px;
-  margin:0px;
+* {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
 }
-html, body, #root{
-  background-color: rgb(230,230,230);
-  
+
+html,
+body,
+#root {
+  background-color: #efefef;
+  height: 100%;
 }

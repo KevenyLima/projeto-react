@@ -1,8 +1,8 @@
-function Contato(){
+function Contato() {
     return (
         <>
-        <h1>Contato</h1>
-        <div>conteudo Contato</div>
+            <h1>Contato</h1>
+            <div>conteudo Contato</div>
         </>
     )
 }

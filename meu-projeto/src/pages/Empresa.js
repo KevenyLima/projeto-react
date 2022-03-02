@@ -1,8 +1,8 @@
-function Empresa(){
+function Empresa() {
     return (
         <>
-        <h1>Empresa</h1>
-        <div>conteudo Empresa</div>
+            <h1>Empresa</h1>
+            <div>conteudo Empresa</div>
         </>
     )
 }
